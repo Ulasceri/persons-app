@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.example.personapp.fragment.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/personRegisterTransition"
+            app:destination="@id/personRegisterFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_personDetailFragment2"
+            app:destination="@id/personDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personDetailFragment"
+        android:name="com.example.personapp.fragment.PersonDetailFragment"
+        android:label="fragment_person_detail"
+        tools:layout="@layout/fragment_person_detail" >
+        <argument
+            android:name="person"
+            app:argType="com.example.personapp.data.entitiy.Persons" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/personRegisterFragment"
+        android:name="com.example.personapp.fragment.PersonRegisterFragment"
+        android:label="fragment_person_register"
+        tools:layout="@layout/fragment_person_register" >
+        <argument
+            android:name="person"
+            app:argType="com.example.personapp.data.entitiy.Persons" />
+    </fragment>
+</navigation>
